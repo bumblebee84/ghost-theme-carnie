@@ -1,0 +1,33 @@
+<footer class="footer is-centered">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <section class="recent-posts">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        {{#get "posts" limit="5"}}
+                            {{#foreach posts}}
+                                <li><a href="{{url}}">{{title}}</a></li>
+                            {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </section>
+            </div>
+            <div class="column">
+                <section>
+                    <h3>Tags</h3>
+                    <ul>
+                        {{#get "tags" limit="5"}}
+                            {{#foreach tags}}
+                                <li><a class="tag" href="{{url}}">{{name}}</a></li>
+                            {{/foreach}}
+                        {{/get}}
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column has-text-centered copyright">&copy;{{@site.title}} 2018-{{date format="YYYY"}}</div>
+        </div>
+    </div>
+</footer>
